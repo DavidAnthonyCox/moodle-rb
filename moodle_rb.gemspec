@@ -23,5 +23,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'webmock', '~> 1.0'
   spec.add_development_dependency 'vcr', '~> 2.9'
 
-  spec.add_dependency 'httparty', '~> 0.11.0'
+  spec.add_dependency 'httparty', '~> 0.13.0'
+  spec.add_dependency 'haml', '~> 4.0', '> 4.0.0'
 end
