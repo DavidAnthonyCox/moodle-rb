@@ -40,5 +40,9 @@ module MoodleRb
     def grades
       MoodleRb::Grades.new(token, url)
     end
+
+    def message
+      MoodleRb::Message.new(token, url)
+    end
   end
 end

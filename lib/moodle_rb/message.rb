@@ -1,4 +1,6 @@
-module MoodleRB
+require 'haml'
+
+module MoodleRb
   class Message
     include HTTParty
     include Utility
@@ -16,11 +18,12 @@ module MoodleRB
       post_packet = {
         :body => {
           :wstoken => @token,
+          :wsfunction => 'core_message_send_instant_messages',
           :messages => {}
         }
       }
       transmissions.each_index do |i|
-        post_packet[:body][:messages][i.to_s] => {
+        post_packet[:body][:messages][i.to_s] = {
           :touserid => transmissions[i][:touserid], # make sure to set this in the params you pass in
           :text => engine.render(Object.new, :params => transmissions[i])
         }
